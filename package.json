@@ -9,9 +9,6 @@
     "watch": "webpack --watch",
     "dev": "webpack-dev-server --open"
   },
-  "bin": {
-    "tiny-cli": "bin/index.js"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/pzl1026/tiny-cli.git"
