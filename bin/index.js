@@ -5,7 +5,7 @@ const webpack = require('webpack');
 const chalk = require('chalk');
 let type = program.args[0];
 
-if (type == 'init') {
+if (program.init) {
   require('../repo');
   return;
 }

@@ -7,7 +7,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
-  entry: './src/index.js',
+  entry: path.resolve(CWD, './src/index.js'),
   output: {
     publicPath: global.pablicPath || '/',
     filename: 'js/[name].[hash].js'
@@ -69,7 +69,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       hash: true,
       title: 'tiny-demo',
-      template: './src/index.html',
+      template: path.resolve(CWD,'./src/index.html'),
     }),
     new ExtractTextPlugin('style.css'),
     // 与vue-loader配合使用，编译vue文件

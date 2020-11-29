@@ -5,13 +5,13 @@ const pa = process.argv;
 
 // 创建项目
 function createProject(frame) {
-  const tempDir = frame === 'vue' ? '' : 'github:pzl1026/react-temp-pro';
   const spinner = ora(chalk.yellow('正在创建项目...')).start();
-
+  const name = pa[pa.length - 1]; //这里获取init后面的名字
   // 这里是将git模板下载到当前目录，并重新命名
-  download('github:pzl1026/tiny-demo#template', pa[pa.length - 1], function (err) {
+  download('github:pzl1026/tiny-cli#template', name, function (err) {
       if (err) {
-          throw err;
+        console.log(err)
+          // throw err;
           return;
       }
       spinner.text = chalk.blue('项目创建成功');
