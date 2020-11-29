@@ -6,16 +6,17 @@ const chalk = require('chalk');
 let type = program.args[0];
 
 if (type == 'init') {
+  require('../repo');
   return;
 }
 
-// 这边对应 -d 的命令
+// 这边对应 -d 的命令，开发启动
 if (program.dev) {
   require('../dev-server');
   return;
 }
 
-// 这边对应 -b 的命令
+// 这边对应 -b 的命令，生产编译
 if (program.build) {
   global.pablicPath = './';
   const config = require('../webpack.config');
@@ -25,7 +26,7 @@ if (program.build) {
       process.exit(1);
       return;
     }
-    console.log(chalk.cyan('Build complete.\n'));
+    console.log(chalk.cyan('编译完成.\n'));
   });
   return;
 }
