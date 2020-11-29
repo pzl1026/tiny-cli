@@ -9,7 +9,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 module.exports = {
   entry: './src/index.js',
   output: {
-    publicPath: '/',
+    publicPath: global.pablicPath || '/',
     filename: 'js/[name].[hash].js'
   },
   module: {
@@ -61,6 +61,7 @@ module.exports = {
       },
     ],
   },
+  // 插件
   plugins:  [
     // 清空之前的输出目录
     new CleanWebpackPlugin(),
@@ -79,10 +80,6 @@ module.exports = {
   ],
   mode: 'development',
   devtool: 'inline-source-map',
-  devServer: {
-    contentBase: './dist',
-    hot: true
-  },
   // 别名
   resolve: {
     alias: {
