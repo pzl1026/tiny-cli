@@ -1,15 +1,16 @@
-// import Vue from 'vue';
-// new Vue({
-//   el: '#app',
-//   router,
-//   components: {
-//     App: token ? FrameWork : Login
-//   },
-//   template: '<App />'
-// });
+import Vue from 'vue';
+import App from './pages/hello.vue';
 
-function test() {
-  return 444444433;
-}
+new Vue({
+  el: '#app',
+  components: {
+    App
+  },
+  template: '<App />'
+});
 
-console.log(test());
+// function test() {
+//   return 444444433;
+// }
+
+// console.log(test());
