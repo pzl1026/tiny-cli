@@ -1,3 +1,4 @@
+// 配置tiny-cli的一些命令
 const program = require('commander');
 const path = require('path');
 const packageData = require(path.resolve(__dirname, '../package.json'));

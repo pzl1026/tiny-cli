@@ -7,11 +7,14 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
+  // 代码入口
   entry: path.resolve(CWD, './src/index.js'),
+  // 代码输出
   output: {
     publicPath: global.pablicPath || '/',
     filename: 'js/[name].[hash].js'
   },
+  // 一些loader一般配置
   module: {
     rules: [
       // babel编译

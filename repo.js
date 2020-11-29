@@ -1,3 +1,4 @@
+// 该文件用于下载template目录
 const download = require('download-git-repo');
 const chalk = require('chalk');  
 const ora = require('ora');
@@ -8,6 +9,7 @@ function createProject(frame) {
   const spinner = ora(chalk.yellow('正在创建项目...')).start();
   const name = pa[pa.length - 1]; //这里获取init后面的名字
   // 这里是将git模板下载到当前目录，并重新命名
+  // 这里clone的是tiny-cli仓库的template分支
   download('github:pzl1026/tiny-cli#template', name, function (err) {
       if (err) {
         console.log(err)
